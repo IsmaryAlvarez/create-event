@@ -35,5 +35,4 @@ class ContainerCentral extends Component {
     );
   }
 }
-
 export default ContainerCentral;
