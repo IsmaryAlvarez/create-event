@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
-import firebase, { auth, provider } from "./../../../firebase";
 import "./styles.css";
+
 
 class Botones extends Component {
   constructor() {
@@ -151,3 +151,4 @@ class Botones extends Component {
 }
 
 export default Botones;
+
