@@ -6,7 +6,6 @@ button{
   padding: 1em;
   width: 8em;
   background-color: #29A19C;
-  font-family: Roboto;
   border: none;
   border-radius: .5em;
   color: white;
@@ -19,10 +18,16 @@ button:hover{
 button:disabled{
   background-color:  #E6E6E6;
 }
-   .user-profile {
+  .user-profile {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .user-logout{
     position: fixed;
     top: 20px;
-    right: 40px;
+    right: 80px;
     width: 80px;
     height: 80px;
   }
@@ -32,11 +37,12 @@ button:disabled{
     margin: 1em;
     font-weight: bolder;
     width: 15em;
-    margin-left: -5em;
   }
   .user-profile img {
     border-radius: 50%;
     max-width: 100%;
+    width: 100px;
+    height: 100px;
   }
 
   .App-header {
@@ -44,14 +50,22 @@ button:disabled{
     padding-top: 5%;
     padding-bottom: 5%;
     color: white;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: center;
     justify-content: center;
     text-align: center;
+    font-size: 1.3em;
   }
 
   .botones{
     display: flex;
     justify-content: center;
     text-align: center;
-    padding-bottom: 10%;
+    padding-bottom: 5%;
+    padding-top: 10%;
+  }
+
+  .botones button{
+    width: 14em;  
   }

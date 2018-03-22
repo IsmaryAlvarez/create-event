@@ -88,15 +88,26 @@ class Botones extends Component {
             {this.state.user ? (
               <div>
                 <Row>
-                  <Col xs={12} md={2} className="user-profile">
+                  <Col xs={12} md={12} className="App-header">
+                    <p className="intro">¿Qué deseas hacer?</p>
+                  </Col>
+                  <Col xs={12} md={12} className="user-profile">
                     <img src={this.state.user.photoURL} alt="Foto-Usuario" />
                   </Col>
-                  <Col xs={12} md={10}>
-                    contenedor de eventos
+                </Row>
+
+                <Row className="botones">
+                  <Col xs={6} md={3} mfOffset={3}>
+                    <button>Crear Eventos</button>
+                  </Col>
+                  <Col xs={6} md={3}>
+                    <button>Buscar Eventos</button>
                   </Col>
                 </Row>
                 <Row>
-                  <button onClick={this.logout}>Cerrar Sesión</button>
+                  <Col xs={12} md={12} className="App-header">
+                    <button onClick={this.logout}>Cerrar Sesión</button>
+                  </Col>
                 </Row>
               </div>
             ) : (
@@ -111,8 +122,8 @@ class Botones extends Component {
                 <Row className="botones">
                   <Col xs={12} md={6}>
                     <button onClick={this.login}>Iniciar Sesión</button>
-                    </Col>
-                    <Col xs={12} md={6}>
+                  </Col>
+                  <Col xs={12} md={6}>
                     <button>Registrate</button>
                   </Col>
                 </Row>
