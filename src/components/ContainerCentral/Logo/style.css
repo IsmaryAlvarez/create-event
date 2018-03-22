@@ -1,0 +1,10 @@
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.logo{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
