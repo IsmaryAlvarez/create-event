@@ -1,6 +1,9 @@
 .App-title p{
-    color: black;
-    font-size: 3em;
-    font-weight: bolder;
+    color: #424242;
+    font-size: 1.3em;
     text-align: center;
+    width: 36em;
+    margin-left: -15em;
+    font-family: roboto;
+    font-weight: 300;
 }

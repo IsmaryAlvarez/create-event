@@ -2,4 +2,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: url(./components/img/background_uno.jpeg);
+  background-position: center;
+  object-fit: cover;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

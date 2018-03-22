@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
-import "./styles.css";
-
+import firebase, { auth, provider } from "./../../../firebase";
+import Logo from "./../Logo/Logo";
+import Titulo from "./../Titulo/index";
+import "./style.css";
 
 class Botones extends Component {
   constructor() {
@@ -80,75 +82,72 @@ class Botones extends Component {
 
   render() {
     return (
-      <div className="inicioSesion">
-        <Row>
-          <Col xs={12}>
-            <h2>Comenzar</h2>
+      <Grid>
+        <Row className="inicioSesion">
+          <Col xs={12} md={12}>
+            {this.state.user ? (
+              <div>
+                <Row>
+                  <Col xs={12} md={2} className="user-profile">
+                    <img src={this.state.user.photoURL} alt="Foto-Usuario" />
+                  </Col>
+                  <Col xs={12} md={10}>
+                    contenedor de eventos
+                  </Col>
+                </Row>
+                <Row>
+                  <button onClick={this.logout}>Cerrar Sesión</button>
+                </Row>
+              </div>
+            ) : (
+              <div>
+                <Row className="App-header">
+                  <Col xs={12} md={2}>
+                    <Logo />
+                    <Titulo />
+                    <p className="intro">¿Listo para comenzar?</p>
+                  </Col>
+                </Row>
+                <Row className="botones">
+                  <Col xs={12} md={6}>
+                    <button onClick={this.login}>Iniciar Sesión</button>
+                    </Col>
+                    <Col xs={12} md={6}>
+                    <button>Registrate</button>
+                  </Col>
+                </Row>
+              </div>
+            )}
           </Col>
         </Row>
 
-        <Row>
-          <Col xs={12}>
-            <div className="Botones">
-              {this.state.user ? (
-                <button onClick={this.logout}>Cerrar Sesión</button>
-              ) : (
-                <button onClick={this.login}>Iniciar Sesión</button>
-              )}
-
-              {this.state.user ? (
-                <div>
-                  <div>
-                    <div className="user-profile">
-                      <img src={this.state.user.photoURL} />
-                    </div>
-                   
-                      <Row>
-                        <Col xs={12}>contenedor de eventos</Col>
-                      </Row>
-                    
-                  </div>
-                </div>
-              ) : (
-                <div className="wrapper">
-                  <p>Inicia Sesión para Comenzar</p>
-                </div>
-              )}
+        <div>
+          <section className="display-item">
+            <div className="wrapper">
+              <ul>
+                {this.state.items.map(item => {
+                  return (
+                    <li key={item.id}>
+                      <h3>{item.title}</h3>
+                      <p>
+                        brought by: {item.user}
+                        {item.user === this.state.user.displayName ||
+                        item.user === this.state.user.email ? (
+                          <button onClick={() => this.removeItem(item.id)}>
+                            Remove Item
+                          </button>
+                        ) : null}
+                      </p>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
-            <div>
-             
-                <section className="display-item">
-                  <div className="wrapper">
-                    <ul>
-                      {this.state.items.map(item => {
-                        return (
-                          <li key={item.id}>
-                            <h3>{item.title}</h3>
-                            <p>
-                              brought by: {item.user}
-                              {item.user === this.state.user.displayName ||
-                              item.user === this.state.user.email ? (
-                                <button
-                                  onClick={() => this.removeItem(item.id)}
-                                >
-                                  Remove Item
-                                </button>
-                              ) : null}
-                            </p>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                </section>
-              
-            </div>
-          </Col>
-        </Row>
-      </div>
+          </section>
+        </div>
+      </Grid>
     );
   }
 }
 
 export default Botones;
-

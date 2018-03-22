@@ -1,10 +1,57 @@
 .inicioSesion{
-    background-color: #7299da;
-    color:white;
-    text-align: center;
-    height: auto;
+  background-color: #f5f2f2d1;
+  margin: 5em 10em;
     }
 button{
-        padding: 1em;
-        width: 8em;
+  padding: 1em;
+  width: 8em;
+  background-color: #29A19C;
+  font-family: Roboto;
+  border: none;
+  border-radius: .5em;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
    }
+button:hover{
+  background-color: rgb(100, 206, 202);
+}
+button:disabled{
+  background-color:  #E6E6E6;
+}
+   .user-profile {
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    width: 80px;
+    height: 80px;
+  }
+  .intro{
+    color: #424242;
+    font-size: 1.5em;
+    margin: 1em;
+    font-weight: bolder;
+    width: 15em;
+    margin-left: -5em;
+  }
+  .user-profile img {
+    border-radius: 50%;
+    max-width: 100%;
+  }
+
+  .App-header {
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .botones{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 10%;
+  }
