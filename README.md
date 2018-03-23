@@ -61,8 +61,8 @@ En el desarrollo utilizamos **react** para construir la pagina, **bootstrap**, *
 # Equipo
 
 
-Jazmín Meneses - **UX Designer**
-Natalia Espinoza - **UX Designer**
-América Olivares - **Front End**
-Natalia Albornoz - **Front End**
-Ismary Alvarez - **Front End**
+- Jazmín Meneses - **UX Designer**
+- Natalia Espinoza - **UX Designer**
+- América Olivares - **Front End**
+- Natalia Albornoz - **Front End**
+- Ismary Alvarez - **Front End**
