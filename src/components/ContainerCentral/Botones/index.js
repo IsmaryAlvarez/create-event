@@ -84,53 +84,52 @@ class Botones extends Component {
     return (
       <div className="inicioSesion">
         {this.state.user ? (
-          <div className="App-header">
-            <p className="intro">¿Qué deseas hacer?</p>
+          <div>
+          <div className="user-logout">
+          <button onClick={this.logout}>Cerrar Sesión</button>
             <div className="user-profile">
               <img src={this.state.user.photoURL} alt="Foto-Usuario" />
             </div>
-            <div className="botones">
-              <button>Crear Eventos</button>
-              <button>Buscar Eventos</button>
-            </div>
-            <button onClick={this.logout}>Cerrar Sesión</button>
           </div>
+          <div className='container'>
+          <section className='add-item'>
+                <form onSubmit={this.handleSubmit}>
+                  <p>Crea Tu Evento</p>
+                  <input type="text" name="username" placeholder="Nombre del evento" onChange={this.handleChange} value={this.state.username} />
+                  <input type="text" name="currentItem" placeholder="Detalles del Evento" onChange={this.handleChange} value={this.state.currentItem} />
+                  <button>Crear Evento</button>
+                </form>
+          </section>
+          <section className='display-item'>
+              <div className="wrapper">
+                <ul>
+                  {this.state.items.map((item) => {
+                    return (
+                      <li key={item.id}>
+                        <h3>{item.title}</h3>
+                        <p>Creado por: {item.user}
+                          <button onClick={() => this.removeItem(item.id)}>Cancelar Evento</button>
+                        </p>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+          </section>
+        </div>
+        </div>
         ) : (
           <div>
             <Logo />
             <Titulo />
             <p className="intro">¿Listo para comenzar?</p>
             <div className="botones">
-              <button>Registrate</button>
               <button onClick={this.login}>Iniciar Sesión</button>
             </div>
           </div>
         )}
-        <div>
-          <section className="display-item">
-            <div className="wrapper">
-              <ul>
-                {this.state.items.map(item => {
-                  return (
-                    <li key={item.id}>
-                      <h3>{item.title}</h3>
-                      <p>
-                        brought by: {item.user}
-                        {item.user === this.state.user.displayName ||
-                        item.user === this.state.user.email ? (
-                          <button onClick={() => this.removeItem(item.id)}>
-                            Remove Item
-                          </button>
-                        ) : null}
-                      </p>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </section>
-        </div>
       </div>
+      
     );
   }
 }
