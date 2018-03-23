@@ -1,8 +1,12 @@
+.App-title{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
 .App-title p{
     color: #424242;
-    font-size: 1.3em;
+    font-size: 3vw;
     text-align: center;
-    width: 36em;
-    margin-left: -15em;
+    width: auto;
     font-weight: 300;
 }
